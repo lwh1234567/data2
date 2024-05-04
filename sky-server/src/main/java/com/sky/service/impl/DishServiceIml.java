@@ -153,4 +153,29 @@ public class DishServiceIml implements DishService {
 
 
     }
+    /**
+     * 菜品起售停售
+     * @param status
+     * @return
+     */
+
+    @Override
+    public void startOrStop(Integer status, long id) {
+
+        dishMapper.updateStatus(status,id);
+
+
+    }
+    /**
+     * 根据分类id查询菜品
+     * @param categoryId
+     * @return
+     */
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish.builder()
+                .categoryId(categoryId)
+                .status(StatusConstant.ENABLE)
+                .build();
+        return dishMapper.list(dish);
+    }
 }
