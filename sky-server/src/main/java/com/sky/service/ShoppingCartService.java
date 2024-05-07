@@ -18,4 +18,8 @@ public interface ShoppingCartService {
      * @return
      */
     List<ShoppingCart> showShoppingCart();
+
+    void cleanShoppingCart();
+
+    void subShoppingCart(ShoppingCartDTO shoppingCartDTO);
 }
