@@ -30,4 +30,6 @@ public interface ShoppingCartMapper {
 
 
     void subShoppingCart(ShoppingCart shoppingCart);
+
+    void insertBatch(List<ShoppingCart> shoppingCartList);
 }
